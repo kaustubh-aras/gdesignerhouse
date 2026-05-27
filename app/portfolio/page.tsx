@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portfolio - G Designer House",
     description: "Explore our portfolio of stunning architectural projects",
-    url: "https://www.gdesignerhouse.com/projects",
+    url: "https://www.gdesignerhouse.com/portfolio",
     type: "website",
   },
 };
