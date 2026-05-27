@@ -1,7 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title:
@@ -13,6 +18,9 @@ export const metadata: Metadata = {
   authors: [{ name: "G Designer House" }],
   creator: "G Designer House",
   publisher: "G Designer House",
+  alternates: {
+    canonical: "https://www.gdesignerhouse.com",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -29,7 +37,7 @@ export const metadata: Metadata = {
       "Premier architectural firm specializing in innovative design, contemporary spaces, and sustainable building solutions.",
     images: [
       {
-        url: "https://www.gdesignerhouse.com/og-image.jpg",
+        url: "https://www.gdesignerhouse.com/logo.png",
         width: 1200,
         height: 630,
         alt: "G Designer House - Architects & Planners",
@@ -71,11 +79,6 @@ export const metadata: Metadata = {
       },
     ],
     apple: "/apple-icon.png",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
   },
 };
 

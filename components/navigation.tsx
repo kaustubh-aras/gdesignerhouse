@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ]
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -71,5 +71,5 @@ export function Navigation() {
         </div>
       )}
     </nav>
-  )
+  );
 }

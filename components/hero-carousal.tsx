@@ -92,7 +92,7 @@ export function HeroCarousel() {
         return (
           <Link
             key={slide.id}
-            href="/projects"
+            href="/portfolio"
             className={[
               'absolute inset-0 transition-opacity duration-700 ease-in-out',
               isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none',
@@ -132,7 +132,7 @@ export function HeroCarousel() {
             </div>
 
             {/* ── Gradient for text legibility ── */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
 
             {/* ── Slide label ── */}
             <div className="absolute bottom-24 left-6 md:left-12 z-10">
@@ -149,7 +149,7 @@ export function HeroCarousel() {
       })}
 
       {/* ── Progress bar ───────────────────────────────────── */}
-      <div className="absolute top-0 inset-x-0 z-30 h-[2px] bg-white/10">
+      <div className="absolute top-0 inset-x-0 z-30 h-0.5 bg-white/10">
         <div
           key={current}
           className="h-full bg-primary"

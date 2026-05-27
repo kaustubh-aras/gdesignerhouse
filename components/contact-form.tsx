@@ -3,7 +3,8 @@ import { Mail, MapPin, Phone, Send } from "lucide-react";
 export function ContactForm() {
   return (
     <>
-      <section className="py-12 md:py-20 px-6 bg-secondary mt-20">
+      {/* Form + Map */}
+      <section className="py-12 md:py-20 px-6 bg-secondary">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
@@ -12,13 +13,11 @@ export function ContactForm() {
               <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 Send us a Message
               </h2>
-
               <form
                 action="https://formspree.io/f/xkoeqeek"
                 method="POST"
                 className="flex-1 space-y-4 bg-background p-6 md:p-8 rounded-lg border border-border"
               >
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -29,8 +28,8 @@ export function ContactForm() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm"
                       placeholder="Your name"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm"
                     />
                   </div>
                   <div>
@@ -41,8 +40,8 @@ export function ContactForm() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm"
                       placeholder="Your phone number"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm"
                     />
                   </div>
                 </div>
@@ -56,8 +55,8 @@ export function ContactForm() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm"
                     placeholder="your@email.com"
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm"
                   />
                 </div>
 
@@ -70,8 +69,8 @@ export function ContactForm() {
                     name="message"
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm resize-none"
                     placeholder="Tell us about your project..."
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground bg-background text-sm resize-none"
                   />
                 </div>
 
@@ -104,41 +103,38 @@ export function ContactForm() {
         </div>
       </section>
 
-      {/* ── Contact details cards ────────────────────────────────── */}
+      {/* Contact Details */}
       <section className="py-12 md:py-16 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: MapPin,
-                title: "Office Location",
-                details: ["1&2 Narayan Smruti", "Temba Hospital Road", "Bhayandar (West) 401101"],
-              },
-              {
-                icon: Phone,
-                title: "Phone",
-                details: ["8879464416", "9324590880"],
-              },
-              {
-                icon: Mail,
-                title: "Email",
-                details: ["contact@gdesignerhouse.com"],
-              },
-            ].map((contact, index) => {
-              const Icon = contact.icon;
-              return (
-                <div
-                  key={index}
-                  className="p-6 border border-border rounded-lg text-center hover:border-foreground transition-colors"
-                >
-                  <Icon className="w-6 h-6 mx-auto mb-3 text-accent" />
-                  <h3 className="text-base font-bold mb-2">{contact.title}</h3>
-                  {contact.details.map((detail, dIndex) => (
-                    <p key={dIndex} className="text-muted-foreground text-sm">{detail}</p>
-                  ))}
-                </div>
-              );
-            })}
+
+            <div className="p-6 border border-border rounded-lg text-center hover:border-foreground transition-colors">
+              <MapPin className="w-6 h-6 mx-auto mb-3 text-accent" />
+              <h3 className="text-base font-bold mb-2">Office Location</h3>
+              <p className="text-muted-foreground text-sm">1&2 Narayan Smruti</p>
+              <p className="text-muted-foreground text-sm">Temba Hospital Road</p>
+              <p className="text-muted-foreground text-sm">Bhayandar (West) 401101</p>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg text-center hover:border-foreground transition-colors">
+              <Phone className="w-6 h-6 mx-auto mb-3 text-accent" />
+              <h3 className="text-base font-bold mb-2">Phone</h3>
+              <a href="tel:+918879464416" className="block text-muted-foreground text-sm hover:text-foreground transition-colors">
+                8879464416
+              </a>
+              <a href="tel:+919324590880" className="block text-muted-foreground text-sm hover:text-foreground transition-colors">
+                9324590880
+              </a>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg text-center hover:border-foreground transition-colors">
+              <Mail className="w-6 h-6 mx-auto mb-3 text-accent" />
+              <h3 className="text-base font-bold mb-2">Email</h3>
+              <a href="mailto:contact@gdesignerhouse.com" className="text-muted-foreground text-sm hover:text-foreground transition-colors">
+                contact@gdesignerhouse.com
+              </a>
+            </div>
+
           </div>
         </div>
       </section>

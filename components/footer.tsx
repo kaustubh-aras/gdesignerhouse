@@ -27,7 +27,7 @@ export function Footer() {
             <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Navigation</h4>
             <ul className="space-y-2 text-xs md:text-sm">
               <li><Link href="/services" className="hover:text-accent transition-colors">Services</Link></li>
-              <li><Link href="/projects" className="hover:text-accent transition-colors">Projects</Link></li>
+              <li><Link href="/portfolio" className="hover:text-accent transition-colors">Portfolio</Link></li>
               <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
             </ul>
           </div>
@@ -47,7 +47,7 @@ export function Footer() {
             <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Contact</h4>
             <ul className="space-y-2 md:space-y-3 text-xs md:text-sm">
               <li className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
+                <MapPin size={16} className="mt-1 shrink-0" />
                 <span>Shop Number 1&2 Narayan Smruti, Temba Hospital Road, Mandli Talav, Bhayandar (West) 401101</span>
               </li>
               <li className="flex items-center gap-2">
@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70">
-          <p>&copy; 2024 G Designer House. All rights reserved.</p>
+          <p>&copy; 2026 G Designer House. All rights reserved.</p>
         </div>
       </div>
     </footer>
