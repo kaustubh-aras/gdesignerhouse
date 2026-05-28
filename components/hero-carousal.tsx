@@ -35,6 +35,15 @@ const slides = [
   },
   {
     id: 4,
+    image: '/raj_anant_building_1.jpg',
+    title: 'Residential Layout',
+    description: 'Luxury Home with Amenities',
+    category: 'Residential',
+    // landscape aerial — cover works great
+    fit: 'cover' as const,
+  },
+  {
+    id: 5,
     image: '/project-hero-4.jpg',
     title: 'Modern Residence',
     description: 'Luxury Home with Amenities',
