@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     url: "https://www.gdesignerhouse.com/about",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.gdesignerhouse.com/about",
+  },
 };
 
 const VALUES = [
@@ -72,12 +75,44 @@ const WHY_US = [
   "Collaborative approach that values client input and vision",
 ];
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.gdesignerhouse.com",
+  name: "G Designer House",
+  description:
+    "Premier architectural firm specializing in innovative design, contemporary spaces, and sustainable building solutions.",
+  image: "https://www.gdesignerhouse.com/logo.png",
+  url: "https://www.gdesignerhouse.com",
+  telephone: "8879464416",
+  email: "g.designerhouse@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Shop 1 and 2, Narayan Smruti, Temba Hospital Road",
+    addressLocality: "Bhayandar West",
+    addressRegion: "Maharashtra",
+    postalCode: "401101",
+    addressCountry: "IN",
+  },
+  areaServed: ["IN"],
+  priceRange: "$$",
+  sameAs: [
+    "https://www.facebook.com/gdesignerhouse",
+    "https://www.instagram.com/gdesignerhouse",
+    "https://www.linkedin.com/company/gdesignerhouse",
+  ],
+};
+
 export default function About() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      ;
       <Navigation />
       <main className="bg-background">
-
         <HeroCarousel
           title="About G Designer House"
           subtitle="A premier architectural firm dedicated to transforming visions into extraordinary spaces through innovation, expertise, and unwavering commitment to excellence."
@@ -87,7 +122,9 @@ export default function About() {
         <section className="py-12 md:py-20 px-6 border-t border-border">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Our Mission
+              </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 We create exceptional architectural solutions that blend
                 innovation with functionality. Every project is an opportunity
@@ -100,7 +137,9 @@ export default function About() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Vision</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Our Vision
+              </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 To be recognized as a leading architectural firm that shapes the
                 future of built environments through visionary design,
@@ -127,7 +166,9 @@ export default function About() {
                   className="p-6 md:p-8 bg-background rounded-lg border border-border"
                 >
                   <h3 className="text-2xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground text-lg">{value.description}</p>
+                  <p className="text-muted-foreground text-lg">
+                    {value.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -185,7 +226,6 @@ export default function About() {
             </ul>
           </div>
         </section>
-
       </main>
       <Footer />
     </>
