@@ -4,7 +4,7 @@ import HeroCarousel from "@/components/hero-carousel2";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us - G Designer House | Meet Our Team",
+  title: "About Us - Architectural Firm in Mumbai",
   description:
     "Discover the story of G Designer House. Learn about our mission, core values, and the expert team behind innovative architectural designs.",
   keywords:
@@ -110,7 +110,6 @@ export default function About() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      ;
       <Navigation />
       <main className="bg-background">
         <HeroCarousel

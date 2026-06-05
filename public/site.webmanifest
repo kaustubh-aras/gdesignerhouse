@@ -31,7 +31,7 @@
       "src": "/logo.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/favicon.ico",
@@ -41,14 +41,14 @@
   ],
   "screenshots": [
     {
-      "src": "/project-hero-1.jpg",
-      "sizes": "540x720",
+      "src": "/project-hero-2.jpg",
+      "sizes": "853x1280",
       "form_factor": "narrow",
       "type": "image/jpeg"
     },
     {
-      "src": "/project-hero-2.jpg",
-      "sizes": "1280x720",
+      "src": "/project-hero-1.jpg",
+      "sizes": "2000x3154",
       "form_factor": "wide",
       "type": "image/jpeg"
     }
@@ -59,39 +59,21 @@
       "short_name": "Services",
       "description": "View our architectural services",
       "url": "https://www.gdesignerhouse.com/services",
-      "icons": [
-        {
-          "src": "/icon-light-32x32.png",
-          "sizes": "32x32",
-          "type": "image/png"
-        }
-      ]
+      "icons": [{ "src": "/icon-light-32x32.png", "sizes": "32x32", "type": "image/png" }]
     },
     {
       "name": "Portfolio",
       "short_name": "Portfolio",
       "description": "View our portfolio of projects",
       "url": "https://www.gdesignerhouse.com/portfolio",
-      "icons": [
-        {
-          "src": "/icon-light-32x32.png",
-          "sizes": "32x32",
-          "type": "image/png"
-        }
-      ]
+      "icons": [{ "src": "/icon-light-32x32.png", "sizes": "32x32", "type": "image/png" }]
     },
     {
       "name": "Contact",
       "short_name": "Contact",
       "description": "Get in touch with us",
       "url": "https://www.gdesignerhouse.com/contact",
-      "icons": [
-        {
-          "src": "/icon-light-32x32.png",
-          "sizes": "32x32",
-          "type": "image/png"
-        }
-      ]
+      "icons": [{ "src": "/icon-light-32x32.png", "sizes": "32x32", "type": "image/png" }]
     }
   ],
   "categories": ["business", "architecture"],

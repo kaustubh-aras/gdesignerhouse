@@ -9,8 +9,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title:
-    "G Designer House - Architects & Planners | Architectural Design Services",
+  title: {
+    default: "G Designer House | Architects & Planners",
+    template: "%s | G Designer House",
+  },
   description:
     "Premier architectural firm specializing in innovative design, contemporary spaces, and sustainable building solutions. Expert architects and planners for residential and commercial projects.",
   keywords:

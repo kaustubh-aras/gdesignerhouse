@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     url: "https://www.gdesignerhouse.com/services",
     type: "website",
   },
+  alternates: { canonical: "https://www.gdesignerhouse.com/services" },
 };
 
 const SERVICES = [
@@ -148,7 +149,15 @@ const LIAISONING_STAGES = [
   },
 ];
 
-function StageItem({ stage, title, description }: { stage: string; title: string; description: string }) {
+function StageItem({
+  stage,
+  title,
+  description,
+}: {
+  stage: string;
+  title: string;
+  description: string;
+}) {
   return (
     <div className="flex gap-6 pb-6 border-b border-border last:border-b-0">
       <div className="shrink-0">
@@ -158,7 +167,9 @@ function StageItem({ stage, title, description }: { stage: string; title: string
       </div>
       <div className="flex-1">
         <h4 className="text-lg font-bold mb-2 text-foreground">{title}</h4>
-        <p className="text-muted-foreground text-sm md:text-base">{description}</p>
+        <p className="text-muted-foreground text-sm md:text-base">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -169,7 +180,6 @@ export default function Services() {
     <>
       <Navigation />
       <main className="bg-background">
-
         <HeroCarousel
           title="Comprehensive Services"
           subtitle="From concept to completion, we provide end-to-end architectural and liaisoning solutions tailored to your specific needs."
@@ -193,7 +203,10 @@ export default function Services() {
                   <ul className="space-y-3">
                     {service.features.map((feature, fi) => (
                       <li key={fi} className="flex items-start gap-3">
-                        <Check size={20} className="text-accent shrink-0 mt-0.5" />
+                        <Check
+                          size={20}
+                          className="text-accent shrink-0 mt-0.5"
+                        />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -211,9 +224,10 @@ export default function Services() {
               Our Processes
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-8">Designing</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-8">
+                  Designing
+                </h3>
                 <div className="space-y-6">
                   {DESIGNING_STAGES.map((item) => (
                     <StageItem key={item.stage} {...item} />
@@ -222,18 +236,18 @@ export default function Services() {
               </div>
 
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-8">Liaisoning</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-8">
+                  Liaisoning
+                </h3>
                 <div className="space-y-6">
                   {LIAISONING_STAGES.map((item) => (
                     <StageItem key={item.stage} {...item} />
                   ))}
                 </div>
               </div>
-
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>
