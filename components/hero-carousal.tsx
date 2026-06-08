@@ -8,47 +8,66 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const slides = [
   {
     id: 1,
-    image: '/project-hero-1.jpg',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=85',
     title: 'Index Hyundai',
     description: 'Modern Commercial & Showroom Complex',
     category: 'Commercial',
-    // portrait — use blurred-bg so full building is visible
-    fit: 'contain' as const,
+    fit: 'cover' as const,
   },
   {
     id: 2,
-    image: '/project-hero-2.jpg',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85',
     title: 'Sindhudurg Co-Op',
     description: 'Contemporary Residential Tower',
     category: 'Residential',
-    // portrait — use blurred-bg; also crop bottom watermark via object-position
-    fit: 'contain' as const,
+    fit: 'cover' as const,
   },
   {
     id: 3,
-    image: '/project-hero-3.jpg',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85',
     title: 'Twin Towers',
     description: 'Elegant Residential Development',
     category: 'Residential',
-    // landscape — cover works great
     fit: 'cover' as const,
   },
   {
     id: 4,
-    image: '/raj_anant_building_1.jpg',
-    title: 'Residential Layout',
-    description: 'Luxury Home with Amenities',
-    category: 'Residential',
-    // landscape aerial — cover works great
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=85',
+    title: 'Club House',
+    description: 'Luxury Amenities & Recreational Spaces',
+    category: 'Amenities',
     fit: 'cover' as const,
   },
   {
     id: 5,
-    image: '/project-hero-4.jpg',
-    title: 'Modern Residence',
-    description: 'Luxury Home with Amenities',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85',
+    title: 'Raj Anant',
+    description: 'Premium Residential Development',
     category: 'Residential',
-    // landscape aerial — cover works great
+    fit: 'cover' as const,
+  },
+  {
+    id: 6,
+    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=85',
+    title: 'City Skyline at Dusk',
+    description: 'Where Architecture Meets the Horizon',
+    category: 'Inspiration',
+    fit: 'cover' as const,
+  },
+  {
+    id: 7,
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=85',
+    title: 'Metropolitan Grandeur',
+    description: 'Iconic Towers Shaping the Urban Canvas',
+    category: 'Inspiration',
+    fit: 'cover' as const,
+  },
+  {
+    id: 8,
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85',
+    title: 'Skyline at Night',
+    description: 'The City Alive — Light, Form & Scale',
+    category: 'Inspiration',
     fit: 'cover' as const,
   },
 ]
@@ -95,7 +114,6 @@ export function HeroCarousel() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
 
-      {/* ── Slides ─────────────────────────────────────────── */}
       {slides.map((slide, index) => {
         const isActive = index === current
         return (
@@ -108,7 +126,6 @@ export function HeroCarousel() {
             ].join(' ')}
             tabIndex={isActive ? 0 : -1}
           >
-            {/* ── Blurred background layer (fills whole screen always) ── */}
             <div className="absolute inset-0 overflow-hidden">
               <Image
                 src={slide.image}
@@ -122,28 +139,19 @@ export function HeroCarousel() {
               />
             </div>
 
-            {/* ── Foreground image — fit strategy per image ── */}
             <div className="absolute inset-0 flex items-center justify-center">
               <Image
                 src={slide.image}
                 alt={slide.title}
                 fill
-                className={[
-                  slide.fit === 'contain' ? 'object-contain' : 'object-cover',
-                  // image 2 has a watermark strip at the bottom — nudge up slightly
-                  slide.id === 2 ? 'object-top' : 'object-center',
-                  // image 4 is washed out — boost contrast
-                  slide.id === 4 ? 'brightness-110 contrast-110 saturate-110' : '',
-                ].join(' ')}
+                className="object-cover object-center"
                 sizes="100vw"
                 priority={index === 0}
               />
             </div>
 
-            {/* ── Gradient for text legibility ── */}
             <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
 
-            {/* ── Slide label ── */}
             <div className="absolute bottom-24 left-6 md:left-12 z-10">
               <span className="text-[11px] tracking-[0.2em] uppercase text-white/55 font-medium">
                 {slide.category}
@@ -157,7 +165,6 @@ export function HeroCarousel() {
         )
       })}
 
-      {/* ── Progress bar ───────────────────────────────────── */}
       <div className="absolute top-0 inset-x-0 z-30 h-0.5 bg-white/10">
         <div
           key={current}
@@ -166,37 +173,22 @@ export function HeroCarousel() {
         />
       </div>
 
-      {/* ── Prev arrow ─────────────────────────────────────── */}
       <button
         onClick={prev}
         aria-label="Previous slide"
-        className="
-          absolute left-4 top-1/2 -translate-y-1/2 z-30
-          w-8 h-8 flex items-center justify-center rounded-full
-          bg-black/30 hover:bg-black/55 backdrop-blur-sm
-          border border-white/20 text-white
-          transition-all duration-200 hover:scale-105 active:scale-95
-        "
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/55 backdrop-blur-sm border border-white/20 text-white transition-all duration-200 hover:scale-105 active:scale-95"
       >
         <ChevronLeft size={16} strokeWidth={2.5} />
       </button>
 
-      {/* ── Next arrow ─────────────────────────────────────── */}
       <button
         onClick={next}
         aria-label="Next slide"
-        className="
-          absolute right-4 top-1/2 -translate-y-1/2 z-30
-          w-8 h-8 flex items-center justify-center rounded-full
-          bg-black/30 hover:bg-black/55 backdrop-blur-sm
-          border border-white/20 text-white
-          transition-all duration-200 hover:scale-105 active:scale-95
-        "
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-8 h-8 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/55 backdrop-blur-sm border border-white/20 text-white transition-all duration-200 hover:scale-105 active:scale-95"
       >
         <ChevronRight size={16} strokeWidth={2.5} />
       </button>
 
-      {/* ── Dot indicators ─────────────────────────────────── */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
         {slides.map((_, index) => (
           <button
@@ -217,7 +209,6 @@ export function HeroCarousel() {
         ))}
       </div>
 
-      {/* ── Progress keyframe ──────────────────────────────── */}
       <style>{`
         @keyframes carousel-progress {
           from { transform: scaleX(0); transform-origin: left; }
