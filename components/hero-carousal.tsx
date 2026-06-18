@@ -16,7 +16,7 @@ const slides = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=85',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85',
     title: 'Sindhudurg Co-Op',
     description: 'Contemporary Residential Tower',
     category: 'Residential',
